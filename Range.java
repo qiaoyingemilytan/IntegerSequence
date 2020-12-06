@@ -5,8 +5,8 @@ public class Range implements IntegerSequence{
   //@param start : the starting value (inclusive) which must be <= end.
   //@param end : the ending value which is also inclusive.
   public Range(int start, int end){
-    start = this.start;
-    end = this.end;
+    this.start = start;
+    this.end = end;
     current = this.start;
   }
 
@@ -14,12 +14,12 @@ public class Range implements IntegerSequence{
     current = start;
   }
   public int length(){
-    return end + 1;
+    return end - start + 1;
   }
 
   //When current is no longer a valid element in the range, it should return false.
   public boolean hasNext(){
-    if(current >= start && current < end){
+    if(current >= start && current <= end){
       return true;
     }
     return false;
