@@ -8,6 +8,9 @@ public class Range implements IntegerSequence{
     this.start = start;
     this.end = end;
     current = this.start;
+    if(start > end){
+      throw new IllegalArgumentException("Start must be less than end");
+    }
   }
 
   public void reset(){
