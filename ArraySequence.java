@@ -4,16 +4,17 @@ public class ArraySequence implements IntegerSequence{
   private int [] data;
 
   public ArraySequence(int [] other){
-    data = other;
+    data = new int[other.length];
+    for(int i = 0; i < other.length; i++){
+      data[i] = other[i];
+    }
   }
 
   public ArraySequence(IntegerSequence otherseq){
     otherseq.reset();
     data = new int[otherseq.length()];
-    int i = 0;
-    while(otherseq.hasNext()){
+    for(int i = 0; i < otherseq.length(); i++){
       data[i] = otherseq.next();
-      i++;
     }
   }
 
